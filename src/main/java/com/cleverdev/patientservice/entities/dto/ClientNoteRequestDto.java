@@ -1,4 +1,4 @@
-package com.cleverdev.patientservice.services.dto;
+package com.cleverdev.patientservice.entities.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

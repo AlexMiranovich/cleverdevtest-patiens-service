@@ -1,8 +1,8 @@
 package com.cleverdev.patientservice.services;
 
-import com.cleverdev.patientservice.services.dto.ClientDto;
-import com.cleverdev.patientservice.services.dto.ClientNoteDto;
-import com.cleverdev.patientservice.services.dto.ClientNoteRequestDto;
+import com.cleverdev.patientservice.entities.dto.ClientDto;
+import com.cleverdev.patientservice.entities.dto.ClientNoteDto;
+import com.cleverdev.patientservice.entities.dto.ClientNoteRequestDto;
 
 import java.util.List;
 

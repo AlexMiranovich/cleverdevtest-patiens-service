@@ -20,7 +20,7 @@ public class PatientProfile {
     private Long id;
     private String firstName;
     private String lastName;
-    private String oldClientGid;
+    private String oldClientGuid;
     @Column(nullable = false)
-    private Long statusId;
+    private Integer statusId;
 }

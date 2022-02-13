@@ -23,8 +23,8 @@ public class PatientNote {
     private Instant createdDateTime;
     @Column(nullable = false)
     private Instant lastModifiedDateTime;
-    private Short createdByUserId;
-    private Short lastModifiedByUserId;
+    private Long createdByUserId;
+    private Long lastModifiedByUserId;
     private String note;
     @Column(nullable = false)
     private Long patientId;

@@ -1,6 +1,6 @@
 package com.cleverdev.patientservice.services;
 
-import com.cleverdev.patientservice.services.dto.ClientDto;
+import com.cleverdev.patientservice.entities.dto.ClientDto;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;

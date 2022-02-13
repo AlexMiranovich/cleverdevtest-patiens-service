@@ -2,9 +2,9 @@ package com.cleverdev.patientservice.services.impl;
 
 import com.cleverdev.patientservice.properties.ClientProperties;
 import com.cleverdev.patientservice.services.ClientService;
-import com.cleverdev.patientservice.services.dto.ClientDto;
-import com.cleverdev.patientservice.services.dto.ClientNoteDto;
-import com.cleverdev.patientservice.services.dto.ClientNoteRequestDto;
+import com.cleverdev.patientservice.entities.dto.ClientDto;
+import com.cleverdev.patientservice.entities.dto.ClientNoteDto;
+import com.cleverdev.patientservice.entities.dto.ClientNoteRequestDto;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.SneakyThrows;
 import org.springframework.stereotype.Service;
