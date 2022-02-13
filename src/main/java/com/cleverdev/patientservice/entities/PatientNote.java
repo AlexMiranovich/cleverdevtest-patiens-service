@@ -6,7 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.time.Instant;
+import java.time.LocalDateTime;
 
 @Data
 @NoArgsConstructor
@@ -19,12 +19,14 @@ public class PatientNote {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(unique = true, nullable = false)
     private Long id;
+    private String oldNoteGuid;
     @Column(nullable = false)
-    private Instant createdDateTime;
+    private LocalDateTime createdDateTime;
     @Column(nullable = false)
-    private Instant lastModifiedDateTime;
+    private LocalDateTime lastModifiedDateTime;
     private Long createdByUserId;
     private Long lastModifiedByUserId;
+    @Column(length = 4000)
     private String note;
     @Column(nullable = false)
     private Long patientId;

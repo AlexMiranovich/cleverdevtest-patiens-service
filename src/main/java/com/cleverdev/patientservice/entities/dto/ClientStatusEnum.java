@@ -2,8 +2,8 @@ package com.cleverdev.patientservice.entities.dto;
 
 public enum ClientStatusEnum {
 
-    PENDING(210),
     ACTIVE(200),
+    PENDING(210),
     INACTIVE(230);
 
     private final Integer code;

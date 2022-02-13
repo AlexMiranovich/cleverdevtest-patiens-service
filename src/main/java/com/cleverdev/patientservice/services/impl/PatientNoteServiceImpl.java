@@ -13,5 +13,15 @@ public class PatientNoteServiceImpl implements PatientNoteService {
     private final PatientNoteRepository patientNoteRepository;
 
     @Override
+    public PatientNote findByOldNoteGuid(String oldNoteGuid) { return patientNoteRepository.findByOldNoteGuid(oldNoteGuid); }
+
+    @Override
     public PatientNote save(PatientNote patientNote) { return patientNoteRepository.save(patientNote); }
+
+    @Override
+    public void update(PatientNote patientNote) {
+        patientNoteRepository.update(patientNote.getCreatedDateTime(), patientNote.getLastModifiedDateTime(),
+                patientNote.getCreatedByUserId(), patientNote.getLastModifiedByUserId(), patientNote.getNote(),
+                patientNote.getPatientId(), patientNote.getId());
+    }
 }

@@ -14,8 +14,8 @@ import java.time.LocalDateTime;
 @Builder
 public class ClientNoteDto {
 
-    private String comments;
     private String guid;
+    private String comments;
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime modifiedDateTime;
     private String clientGuid;

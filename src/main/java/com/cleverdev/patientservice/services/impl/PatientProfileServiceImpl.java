@@ -13,5 +13,8 @@ public class PatientProfileServiceImpl implements PatientProfileService {
     private final PatientProfileRepository patientProfileRepository;
 
     @Override
+    public PatientProfile findByGuid(String guid) { return patientProfileRepository.findByGuid(guid); }
+
+    @Override
     public PatientProfile save(PatientProfile patientProfile) { return patientProfileRepository.save(patientProfile); }
 }

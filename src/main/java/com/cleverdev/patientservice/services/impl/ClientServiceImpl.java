@@ -7,6 +7,8 @@ import com.cleverdev.patientservice.entities.dto.ClientNoteDto;
 import com.cleverdev.patientservice.entities.dto.ClientNoteRequestDto;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.SneakyThrows;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 
 import java.net.URI;
@@ -50,6 +52,7 @@ public class ClientServiceImpl implements ClientService {
         String url = String.format("%s%s", clientProperties.getUrl(), CLIENT_NOTES_URL);
         HttpRequest request = HttpRequest.newBuilder()
             .POST(HttpRequest.BodyPublishers.ofString(objectMapper.writeValueAsString(clientNoteRequestDto)))
+            .setHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
             .uri(URI.create(url))
             .build();
         HttpResponse<String> response =  httpClient.send(request, HttpResponse.BodyHandlers.ofString());
