@@ -78,12 +78,10 @@ public class ImportDataProcessing implements Runnable {
 
     private void processUsers(List<ClientNoteDto> clientNotes, ClientDto clientDto) {
         clientNotes.forEach(note -> {
-            String login = note.getLoggedUser();
-            CompanyUser createdUser = null;
-            CompanyUser existedUser = companyUserService.findByLogin(login);
-            if (existedUser == null) createdUser = companyUserService.save(CompanyUser.builder().login(login).build());
-            CompanyUser userForNotes = Optional.ofNullable(createdUser).orElse(existedUser);
-            processNote(note, userForNotes, clientDto);
+            CompanyUser user = Optional
+                .ofNullable(companyUserService.findByLogin(note.getLoggedUser()))
+                .orElse(companyUserService.save(CompanyUser.builder().login(note.getLoggedUser()).build()));
+            processNote(note, user, clientDto);
         });
     }
 
