@@ -68,7 +68,7 @@ public class ImportDataProcessing implements Runnable {
                 log.info("Processing client's notes was finished, because client don't have client's notes - {}", clientDto.getGuid());
                 return;
             }
-            processUsers(clientNotes, clientDto);
+            processClientNotes(clientNotes, clientDto);
         } catch (Exception exception) {
             log.error("Failed to process client - {}. Error - {}", clientDto.getGuid(), exception.getMessage());
         } finally {
@@ -76,7 +76,7 @@ public class ImportDataProcessing implements Runnable {
         }
     }
 
-    private void processUsers(List<ClientNoteDto> clientNotes, ClientDto clientDto) {
+    private void processClientNotes(List<ClientNoteDto> clientNotes, ClientDto clientDto) {
         clientNotes.forEach(note -> {
             CompanyUser user = Optional
                 .ofNullable(companyUserService.findByLogin(note.getLoggedUser()))
